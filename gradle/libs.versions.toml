@@ -1,0 +1,81 @@
+[versions]
+# Plugins
+agp = "7.3.0"
+
+junit4 = "4.13.2"
+junit5 = "5.9.1"
+robolectric = "4.9"
+androidDesugarJdkLibs = "1.2.2"
+
+kotlinVersion = "1.7.0"
+kotlin-ksp = "1.7.0-1.0.6"
+kotlinCoroutinesVersion = "1.6.4"
+
+[plugins]
+android-app = { id = "com.android.application", version.ref = "agp" }
+android-lib = { id = "com.android.library", version.ref = "agp" }
+
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlinVersion" }
+
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlin-ksp" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinVersion" }
+
+[libraries]
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+google-ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "kotlin-ksp" }
+kotlin-parcelize-gradlePlugin = { group = "org.jetbrains.kotlin.plugin.parcelize", name = "org.jetbrains.kotlin.plugin.parcelize.gradle.plugin", version.ref = "kotlinVersion" }
+
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+
+multidex = "androidx.multidex:multidex:2.0.1"
+annotation = "androidx.annotation:annotation:1.5.0"
+
+coreKtx = "androidx.core:core-ktx:1.9.0"
+activityKtx = "androidx.activity:activity-ktx:1.6.0"
+
+fragmentKtx = "androidx.fragment:fragment-ktx:1.5.3"
+fragment-testing = "androidx.fragment:fragment-testing:1.5.3"
+
+# Kotlin
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlinVersion" }
+
+# Utils
+jakewharton-timber = "com.jakewharton.timber:timber:5.0.1"
+leakcanary = "com.squareup.leakcanary:leakcanary-android:2.9.1"
+
+# Test
+junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+
+androidx-test-ext = { group = "androidx.test.ext", name = "junit", version = "1.1.3" }
+androidx-test-arch = { group = "androidx.arch.core", name = "core-testing", version = "2.1.0" }
+androidx-test-core = { group = "androidx.test", name = "core-ktx", version = "1.4.0" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version = "1.3.0" }
+
+mockk = { group = "io.mockk", name = "mockk", version = "1.13.2" }
+jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit5" }
+
+[bundles]
+kotlin = [
+    "kotlin-stdlib",
+]
+
+test-unit = [
+    "junit4",
+    "mockk",
+    "robolectric",
+    "jupiter-api",
+    "androidx-test-core",
+    "androidx-test-arch",
+]
+
+test-android = [
+    "androidx-test-runner",
+    "androidx-test-arch",
+    "androidx-test-core",
+    "androidx-test-ext",
+    "jupiter-api",
+]
