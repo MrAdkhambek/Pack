@@ -27,6 +27,8 @@ rootProject.name = "Pack"
 
 include(
     ":libraries:text:core",
-    ":libraries:text:ktx"
+    ":libraries:text:ktx",
+
+    ":libraries:validators"
 )
 

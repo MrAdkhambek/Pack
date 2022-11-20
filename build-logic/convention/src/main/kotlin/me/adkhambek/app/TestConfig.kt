@@ -28,7 +28,7 @@ internal fun Project.configureTestAndroid(
         val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
         dependencies {
-            add("testImplementation", libs.findBundle("test-unit").get())
+            add("testImplementation", libs.findBundle("test-android-unit").get())
             add("androidTestImplementation", libs.findBundle("test-android").get())
         }
     }
