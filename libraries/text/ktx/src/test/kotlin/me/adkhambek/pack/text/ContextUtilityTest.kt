@@ -18,7 +18,6 @@ internal class ContextUtilityTest {
     fun `test plain text`() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val plainText = "Text"
-
         val text = Text(plainText)
         Assertions.assertEquals(context.getString(text), plainText)
     }

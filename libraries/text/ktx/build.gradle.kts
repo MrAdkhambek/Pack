@@ -20,6 +20,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.annotation)
     api(projects.libraries.text.core)
 }
 

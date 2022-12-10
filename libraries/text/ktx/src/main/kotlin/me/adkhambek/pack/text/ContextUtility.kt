@@ -1,6 +1,7 @@
 package me.adkhambek.pack.text
 
 import android.content.Context
+import androidx.annotation.CheckResult
 
 /**
  * ```kotlin
@@ -12,6 +13,7 @@ import android.content.Context
  * @param text the [Text]
  * @return the [String] data associated with the resource or plain string
  */
+@CheckResult
 public fun Context.getString(text: Text): String = when (text) {
     is Text.PlainText -> text.value
     is Text.ResText -> {
