@@ -26,10 +26,12 @@ val text: Text = Text(R.string.hi, "Adam")
 For using on UI layer
 
 ```kotlin
-val text: Text = ...
+val text: Text = TODO()
 context.getString(text)
 // or
 view.getString(text)
+// for TextView
+textView.setText(text)
 ```
 
 -------------
