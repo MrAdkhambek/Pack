@@ -1,6 +1,3 @@
-
-[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/text.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22me.adkhambek.pack%22)
-
 ## Text - String wrapper between business logic layer and ui layer
 
 ## Plain Text
@@ -25,17 +22,21 @@ val text: Text = Text(R.string.hi, "Adam")
 ```
 
 ## Extensions
+
 For using on UI layer
+
 ```kotlin
 val text: Text = ...
 context.getString(text)
 // or
 view.getString(text)
 ```
+
 -------------
 
 Essential downloads
 -------------
+[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/text.svg?label=Maven%20Central)](https://search.maven.org/artifact/me.adkhambek.pack/text)
 
 ```groovy
 repositories {
@@ -47,8 +48,9 @@ dependencies {
 }
 ```
 
-Additional dependency
+Other dependency
 -------------
+[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/text-ktx.svg?label=Maven%20Central)](https://search.maven.org/artifact/me.adkhambek.pack/text-ktx)
 ```groovy
 dependencies {
     //  if you want with extensions
