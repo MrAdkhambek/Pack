@@ -7,6 +7,10 @@ junit5 = "5.9.1"
 robolectric = "4.9"
 androidDesugarJdkLibs = "1.2.2"
 
+detektPlugin = "1.20.0"
+ktlintPlugin = "11.0.0"
+
+kotlinpoet = "1.12.0"
 kotlinVersion = "1.7.0"
 kotlin-ksp = "1.7.0-1.0.6"
 kotlinCoroutinesVersion = "1.6.4"
@@ -24,6 +28,9 @@ kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref =
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlin-ksp" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinVersion" }
 
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektPlugin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintPlugin" }
+
 [libraries]
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -36,10 +43,11 @@ multidex = "androidx.multidex:multidex:2.0.1"
 annotation = "androidx.annotation:annotation:1.5.0"
 
 coreKtx = "androidx.core:core-ktx:1.9.0"
-activityKtx = "androidx.activity:activity-ktx:1.6.0"
+activityKtx = "androidx.activity:activity-ktx:1.6.1"
+fragmentKtx = "androidx.fragment:fragment-ktx:1.5.4"
 
-fragmentKtx = "androidx.fragment:fragment-ktx:1.5.3"
-fragment-testing = "androidx.fragment:fragment-testing:1.5.3"
+fragment-testing = "androidx.fragment:fragment-testing:1.5.4"
+cicerone = { group = "com.github.terrakok", name = "cicerone", version = "7.1" }
 
 # Kotlin
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlinVersion" }
@@ -47,6 +55,13 @@ kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.re
 # Utils
 jakewharton-timber = "com.jakewharton.timber:timber:5.0.1"
 leakcanary = "com.squareup.leakcanary:leakcanary-android:2.9.1"
+
+auto-service = { group = "com.google.auto.service", name = "auto-service", version = "1.0.1" }
+ksp-api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "kotlin-ksp" }
+
+kotlinpoet-core = { group = "com.squareup", name = "kotlinpoet", version.ref = "kotlinpoet" }
+kotlinpoet-ksp = { group = "com.squareup", name = "kotlinpoet-ksp", version.ref = "kotlinpoet" }
+dokka-java = { group = "org.jetbrains.dokka", name = "kotlin-as-java-plugin", version.ref = "kotlinVersion" }
 
 # Test
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
@@ -63,6 +78,12 @@ jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version
 jupiter = { group = "org.junit.jupiter", name = "junit-jupiter" }
 
 [bundles]
+androidX = [
+    "coreKtx",
+    "activityKtx",
+    "fragmentKtx"
+]
+
 kotlin = [
     "kotlin-stdlib",
 ]

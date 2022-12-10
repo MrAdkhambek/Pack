@@ -1,3 +1,7 @@
+@file:Suppress(
+    "DSL_SCOPE_VIOLATION",
+    "UnstableApiUsage"
+)
 import java.io.FileInputStream
 import java.io.InputStreamReader
 import java.util.Properties
@@ -15,8 +19,8 @@ kotlin {
 }
 
 java {
-//    sourceCompatibility = Config.javaVersion
-//    targetCompatibility = Config.javaVersion
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 tasks.test {

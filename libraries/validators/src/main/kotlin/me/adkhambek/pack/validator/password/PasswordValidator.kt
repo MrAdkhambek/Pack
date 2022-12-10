@@ -8,6 +8,7 @@ public class PasswordValidator(
 ) : Validator<String?> {
 
     public object KEY : Validator.Key
+
     private companion object {
         // Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
         private val PASSWORD_PATTERN: Pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}\$")
