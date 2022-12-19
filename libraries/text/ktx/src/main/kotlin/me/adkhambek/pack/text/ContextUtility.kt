@@ -1,7 +1,9 @@
 package me.adkhambek.pack.text
 
 import android.content.Context
+import android.os.Parcelable
 import androidx.annotation.CheckResult
+import androidx.annotation.RestrictTo
 
 /**
  * ```kotlin
@@ -21,5 +23,19 @@ public fun Context.getString(text: Text): String = when (text) {
 
         if (formatArgs != null && formatArgs.isNotEmpty()) getString(text.resId, *formatArgs)
         else getString(text.resId)
+    }
+}
+
+
+public class Test
+@RestrictTo(RestrictTo.Scope.SUBCLASSES) constructor() {
+
+    public constructor(arg: String) : this()
+}
+
+public class R {
+    init {
+        val test = Test()
+        val test2 = Test(arg = "Arg")
     }
 }

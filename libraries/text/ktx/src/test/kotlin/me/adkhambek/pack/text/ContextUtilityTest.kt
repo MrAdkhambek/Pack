@@ -19,14 +19,15 @@ internal class ContextUtilityTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val plainText = "Text"
         val text = Text(plainText)
+
         Assertions.assertEquals(context.getString(text), plainText)
     }
 
     @Test
     fun `test res text`() {
         val context = ApplicationProvider.getApplicationContext<Context>()
-
         val text = Text(R.string.autofill)
+
         Assertions.assertEquals(context.getString(text), context.getString(R.string.autofill))
     }
 }

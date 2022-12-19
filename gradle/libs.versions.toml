@@ -37,6 +37,9 @@ kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-pl
 google-ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "kotlin-ksp" }
 kotlin-parcelize-gradlePlugin = { group = "org.jetbrains.kotlin.plugin.parcelize", name = "org.jetbrains.kotlin.plugin.parcelize.gradle.plugin", version.ref = "kotlinVersion" }
 
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutinesVersion" }
+kotlin-coroutines-test ={ group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutinesVersion" }
+
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 
 multidex = "androidx.multidex:multidex:2.0.1"
@@ -48,6 +51,8 @@ fragmentKtx = "androidx.fragment:fragment-ktx:1.5.4"
 
 fragment-testing = "androidx.fragment:fragment-testing:1.5.4"
 cicerone = { group = "com.github.terrakok", name = "cicerone", version = "7.1" }
+
+livedata-core = "androidx.lifecycle:lifecycle-livedata-core:2.5.1"
 
 # Kotlin
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlinVersion" }
