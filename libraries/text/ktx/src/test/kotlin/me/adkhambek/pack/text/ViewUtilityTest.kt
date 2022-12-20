@@ -5,7 +5,6 @@ import android.content.Context
 import android.os.Build
 import android.view.View
 import androidx.test.core.app.ApplicationProvider
-import org.junit.Assert.*
 import org.junit.Test
 import org.junit.jupiter.api.Assertions
 import org.junit.runner.RunWith

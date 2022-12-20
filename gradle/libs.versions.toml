@@ -15,10 +15,12 @@ kotlinVersion = "1.7.0"
 kotlin-ksp = "1.7.0-1.0.6"
 kotlinCoroutinesVersion = "1.6.4"
 
+maven-publish = "0.22.0"
+
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
 android-lib = { id = "com.android.library", version.ref = "agp" }
-publish = { id = "com.vanniktech.maven.publish", version = "0.22.0" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
 
 dokka = { id = "org.jetbrains.dokka", version.ref = "kotlinVersion" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
@@ -36,6 +38,8 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVersion" }
 google-ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "kotlin-ksp" }
 kotlin-parcelize-gradlePlugin = { group = "org.jetbrains.kotlin.plugin.parcelize", name = "org.jetbrains.kotlin.plugin.parcelize.gradle.plugin", version.ref = "kotlinVersion" }
+
+publish-gradlePlugin = { group = "com.vanniktech", name = "gradle-maven-publish-plugin", version.ref = "maven-publish" }
 
 kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutinesVersion" }
 kotlin-coroutines-test ={ group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutinesVersion" }

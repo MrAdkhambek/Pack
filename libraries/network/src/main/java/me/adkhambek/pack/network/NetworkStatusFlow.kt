@@ -19,10 +19,7 @@ public class NetworkStatusFlow private constructor(
 
         @[JvmStatic RequiresPermission(value = ACCESS_NETWORK_STATE)]
         public operator fun invoke(connectivityManager: ConnectivityManager): NetworkStatusFlow {
-            return invoke(networkStatusFlow(connectivityManager))
+            return NetworkStatusFlow(networkStatusFlow(connectivityManager))
         }
-
-        @[JvmStatic RequiresPermission(value = ACCESS_NETWORK_STATE)]
-        private operator fun invoke(delegate: Flow<Boolean>): NetworkStatusFlow = NetworkStatusFlow(delegate)
     }
 }

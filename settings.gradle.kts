@@ -26,7 +26,7 @@ include(
     ":libraries:text:core",
     ":libraries:text:ktx",
 
-    ":libraries:validators"
+    ":libraries:validators",
+    ":libraries:network",
 )
 
-include(":libraries:network")

@@ -1,11 +1,11 @@
 @file:JvmSynthetic
+
 package me.adkhambek.pack.network
 
 import android.Manifest.permission.ACCESS_NETWORK_STATE
 import android.annotation.TargetApi
 import android.net.ConnectivityManager
 import android.net.Network
-import android.net.NetworkCapabilities
 import android.net.NetworkCapabilities.TRANSPORT_CELLULAR
 import android.net.NetworkCapabilities.TRANSPORT_WIFI
 import android.net.NetworkRequest
@@ -34,8 +34,11 @@ internal fun networkStatusFlow(connectManager: ConnectivityManager): Flow<Boolea
         connectManager.registerNetworkCallback(builder.build(), networkCallback)
     }
 
-    val isConnected = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) networkStatusM(connectManager)
-    else networkStatus(connectManager)
+    val isConnected = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        networkStatusM(connectManager)
+    } else {
+        networkStatus(connectManager)
+    }
 
     send(isConnected)
     awaitClose { connectManager.unregisterNetworkCallback(networkCallback) }
@@ -52,14 +55,8 @@ private fun networkStatusM(connectivityManager: ConnectivityManager): Boolean {
 @Suppress("DEPRECATION") // allNetworks
 @RequiresPermission(value = ACCESS_NETWORK_STATE)
 private fun networkStatus(connectivityManager: ConnectivityManager): Boolean {
-    connectivityManager.allNetworks.firstOrNull { network ->
-        connectivityManager.getNetworkCapabilities(network)
-            ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) ?: false
-    }
-
-    return false
+    return connectivityManager.allNetworks.firstOrNull { network ->
+        val cap = connectivityManager.getNetworkCapabilities(network) ?: return@firstOrNull false
+        return@firstOrNull cap.hasTransport(TRANSPORT_WIFI) || cap.hasTransport(TRANSPORT_CELLULAR)
+    } != null
 }
-
-
-
-
