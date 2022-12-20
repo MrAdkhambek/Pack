@@ -21,21 +21,7 @@ public fun Context.getString(text: Text): String = when (text) {
     is Text.ResText -> {
         val formatArgs = text.formatArgs?.toTypedArray()
 
-        if (formatArgs != null && formatArgs.isNotEmpty()) getString(text.resId, *formatArgs)
+        if (!formatArgs.isNullOrEmpty()) getString(text.resId, *formatArgs)
         else getString(text.resId)
-    }
-}
-
-
-public class Test
-@RestrictTo(RestrictTo.Scope.SUBCLASSES) constructor() {
-
-    public constructor(arg: String) : this()
-}
-
-public class R {
-    init {
-        val test = Test()
-        val test2 = Test(arg = "Arg")
     }
 }
