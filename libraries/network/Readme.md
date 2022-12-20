@@ -1,13 +1,5 @@
 ## Network state listener
 
-## Plain Text
-
-```kotlin
-val text: Text = Text.PlainText("Text here")
-// or shorter version
-val text: Text = Text("Text here")
-```
-
 ## Use as Flow
 ```kotlin
 val context : Context = ...
