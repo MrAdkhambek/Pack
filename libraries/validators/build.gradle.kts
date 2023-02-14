@@ -4,8 +4,8 @@
 )
 
 plugins {
-    id("adkhambek.kotlin")
-    id("adkhambek.android.publish")
+    id("com.adkhambek.kotlin")
+    id("com.adkhambek.publish")
 }
 
 kotlin {

@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("VERSION_CATALOGS")
 
@@ -27,6 +29,10 @@ include(
     ":libraries:text:ktx",
 
     ":libraries:validators",
+
     ":libraries:network",
+
+    ":libraries:sms:core",
+    ":libraries:sms:debug"
 )
 

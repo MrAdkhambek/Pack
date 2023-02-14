@@ -4,8 +4,8 @@
 )
 
 plugins {
-    id("adkhambek.android.library")
-    id("adkhambek.android.publish")
+    id("com.adkhambek.android.library")
+    id("com.adkhambek.publish")
 }
 
 android {

@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "me.adkhambek.app.buildlogic"
+group = "com.adkhambek.app.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -19,17 +19,17 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "adkhambek.android.application"
+            id = "com.adkhambek.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
 
         register("androidLibrary") {
-            id = "adkhambek.android.library"
+            id = "com.adkhambek.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
 
         register("kotlinLibrary") {
-            id = "adkhambek.kotlin"
+            id = "com.adkhambek.kotlin"
             implementationClass = "LibraryKotlinConventionPlugin"
         }
     }

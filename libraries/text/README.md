@@ -38,7 +38,7 @@ textView.setText(text)
 
 Essential downloads
 -------------
-[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/text.svg?label=Maven%20Central)](https://search.maven.org/artifact/me.adkhambek.pack/text)
+[![Maven Central](https://img.shields.io/maven-central/v/com.adkhambek.pack/text.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.adkhambek.pack/text)
 
 ```groovy
 repositories {
@@ -46,16 +46,16 @@ repositories {
 }
 
 dependencies {
-    implementation("me.adkhambek.pack:text:${latest_version}")
+    implementation("com.adkhambek.pack:text:${latest_version}")
 }
 ```
 
 Other dependency
 -------------
-[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/text-ktx.svg?label=Maven%20Central)](https://search.maven.org/artifact/me.adkhambek.pack/text-ktx)
+[![Maven Central](https://img.shields.io/maven-central/v/com.adkhambek.pack/text-ktx.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.adkhambek.pack/text-ktx)
 ```groovy
 dependencies {
     //  if you want with extensions
-    implementation("me.adkhambek.pack:text-ktx:${latest_version}")
+    implementation("com.adkhambek.pack:text-ktx:${latest_version}")
 }
 ```

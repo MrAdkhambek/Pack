@@ -42,7 +42,7 @@ kotlin-parcelize-gradlePlugin = { group = "org.jetbrains.kotlin.plugin.parcelize
 publish-gradlePlugin = { group = "com.vanniktech", name = "gradle-maven-publish-plugin", version.ref = "maven-publish" }
 
 kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinCoroutinesVersion" }
-kotlin-coroutines-test ={ group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutinesVersion" }
+kotlin-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutinesVersion" }
 
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 
@@ -71,6 +71,10 @@ ksp-api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", v
 kotlinpoet-core = { group = "com.squareup", name = "kotlinpoet", version.ref = "kotlinpoet" }
 kotlinpoet-ksp = { group = "com.squareup", name = "kotlinpoet-ksp", version.ref = "kotlinpoet" }
 dokka-java = { group = "org.jetbrains.dokka", name = "kotlin-as-java-plugin", version.ref = "kotlinVersion" }
+
+# Google GSM
+gms-play-auth = "com.google.android.gms:play-services-auth-api-phone:18.0.1"
+
 
 # Test
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }

@@ -1,7 +1,7 @@
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-import me.adkhambek.app.Config
-import me.adkhambek.app.configureKotlinAndroid
-import me.adkhambek.app.configureTestAndroid
+import com.adkhambek.app.Config
+import com.adkhambek.app.configureKotlinAndroid
+import com.adkhambek.app.configureTestAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

@@ -5,8 +5,8 @@ plugins {
 group = "me.adkhambek.app.buildlogic"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 dependencies {
@@ -16,7 +16,7 @@ dependencies {
 gradlePlugin {
     plugins {
         register("publisher") {
-            id = "adkhambek.android.publish"
+            id = "com.adkhambek.publish"
             implementationClass = "PublisherPlugin"
         }
     }
