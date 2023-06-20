@@ -13,7 +13,7 @@ public class EmailValidator : Validator<String?> {
         )
     }
 
-    override fun isValid(value: String?): Set<Validator.Key> {
+    override operator fun invoke(value: String?): Set<Validator.Key> {
         return if (isValidPassword(value)) {
             emptySet()
         } else {

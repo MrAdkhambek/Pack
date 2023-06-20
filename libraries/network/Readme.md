@@ -22,7 +22,7 @@ networkStatusFlow.collect { state: Boolean ->
 
 Essential downloads
 -------------
-[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/network.svg?label=Maven%20Central)](https://search.maven.org/artifact/me.adkhambek.pack/network)
+[![Maven Central](https://img.shields.io/maven-central/v/com.adkhambek.pack/network.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.adkhambek.pack/network)
 
 ```groovy
 repositories {
@@ -30,6 +30,6 @@ repositories {
 }
 
 dependencies {
-    implementation("me.adkhambek.pack:network:${latest_version}")
+    implementation("com.adkhambek.pack:network:${latest_version}")
 }
 ```

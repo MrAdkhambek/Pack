@@ -4,11 +4,11 @@ public fun interface Validator<T> {
 
     public interface Key
 
-    public fun isValid(value: T): Set<Key>
+    public operator fun invoke(value: T): Set<Key>
 
-    public fun and(next: Validator<T>): Validator<T> {
+    public infix fun and(next: Validator<T>): Validator<T> {
         return Validator { value ->
-            isValid(value) + next.isValid(value)
+            invoke(value) + next(value)
         }
     }
 }

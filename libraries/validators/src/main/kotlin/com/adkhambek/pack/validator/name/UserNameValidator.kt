@@ -14,7 +14,7 @@ public class UserNameValidator(
         private val USERNAME_PATTERN: Pattern = Pattern.compile("^[a-zA-Z\\d]{3,}\$")
     }
 
-    override fun isValid(value: String?): Set<Validator.Key> {
+    override operator fun invoke(value: String?): Set<Validator.Key> {
         return if (isValidUserName(value)) {
             emptySet()
         } else {

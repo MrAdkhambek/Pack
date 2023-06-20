@@ -10,11 +10,11 @@ internal class PasswordValidatorTest {
 
     @Test
     fun `test correct password`() {
-        Assertions.assertTrue(validator.isValid("Aa12345678").isEmpty())
+        Assertions.assertTrue(validator("Aa12345678").isEmpty())
     }
 
     @Test
     fun `test incorrect password`() {
-        Assertions.assertTrue(validator.isValid("A12345678").contains(PasswordValidator.KEY))
+        Assertions.assertTrue(validator("A12345678").contains(PasswordValidator.KEY))
     }
 }
