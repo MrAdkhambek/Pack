@@ -5,6 +5,19 @@
     val isValid = validator("Aa12345678").isEmpty()
 ```
 
+-------------
+Build in Validators
+```kotlin
+    private val passwordValidator: PasswordValidator = PasswordValidator()
+    private val userNameValidator: UserNameValidator = UserNameValidator()
+    private val emailValidator: EmailValidator = EmailValidator()
+
+
+    val result = passwordValidator("Aa12345678") + userNameValidator("Adam") + emailValidator("mr.adkhambek@gmail.com")
+
+    val isEmailValid = result.contains(EmailValidator.KEY)
+```
+
 
 -------------
 Essential downloads
