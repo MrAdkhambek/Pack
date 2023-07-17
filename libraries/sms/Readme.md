@@ -19,7 +19,7 @@ smsFlow.collect { firstSymbol: Char ->
 
 Essential downloads
 -------------
-[![Maven Central](https://img.shields.io/maven-central/v/me.adkhambek.pack/sms.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.adkhambek.pack/sms)
+[![Maven Central](https://img.shields.io/maven-central/v/com.adkhambek.pack/sms.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.adkhambek.pack/sms)
 
 ```groovy
 repositories {
@@ -28,5 +28,6 @@ repositories {
 
 dependencies {
     implementation("com.adkhambek.pack:sms:${latest_version}")
+    implementation("com.google.android.gms:play-services-auth-api-phone:${latest_version_play_services}")
 }
 ```
