@@ -4,6 +4,7 @@ import android.Manifest.permission.ACCESS_NETWORK_STATE
 import android.content.Context
 import android.net.ConnectivityManager
 import androidx.annotation.RequiresPermission
+import androidx.core.content.getSystemService
 import kotlinx.coroutines.flow.Flow
 
 public class NetworkStatusFlow private constructor(
@@ -15,8 +16,8 @@ public class NetworkStatusFlow private constructor(
         @JvmStatic
         @RequiresPermission(value = ACCESS_NETWORK_STATE)
         public operator fun invoke(context: Context): NetworkStatusFlow {
-            val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            return invoke(cm)
+            val cm = context.getSystemService<ConnectivityManager>()
+            return invoke(requireNotNull(cm) { "ConnectivityManager is not available" })
         }
 
         @JvmStatic

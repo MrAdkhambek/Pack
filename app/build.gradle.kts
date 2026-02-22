@@ -14,6 +14,7 @@ plugins {
 
 
 android {
+    namespace = "me.adkhambek.pack"
     defaultConfig {
         applicationId = "me.adkhambek.pack"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

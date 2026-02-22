@@ -1,21 +1,27 @@
 ## Network state listener
 
+Monitors network connectivity status as a Kotlin `Flow<Boolean>`.
+
+Supported transports: WiFi, Cellular, Ethernet, VPN.
+
+**Requires** `ACCESS_NETWORK_STATE` permission and `minSdk 23`.
+
 ## Use as Flow
 ```kotlin
-val context : Context = ...
+val context: Context = ...
 
 val networkStatusFlow = NetworkStatusFlow(context)
-networkStatusFlow.collect { state: Boolean ->
+networkStatusFlow.collect { isConnected: Boolean ->
     // TODO logic here
 }
 ```
 
 ```kotlin
-val context : Context = ...
-val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+val context: Context = ...
+val cm = context.getSystemService<ConnectivityManager>()!!
 
 val networkStatusFlow = NetworkStatusFlow(cm)
-networkStatusFlow.collect { state: Boolean ->
+networkStatusFlow.collect { isConnected: Boolean ->
     // TODO logic here
 }
 ```

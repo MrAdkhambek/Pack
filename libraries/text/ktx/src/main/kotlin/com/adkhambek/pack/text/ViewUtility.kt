@@ -22,10 +22,10 @@ public inline fun View.getString(text: Text): String = context.getString(text)
 /**
  * ```kotlin
  * val text: Text = ...
- * textView.setText(text)
+ * with(textView) { setText(text) }
  * ```
  * @param text the [Text]
  */
-public inline fun TextView.setText(text: Text) {
-    this.text = context.getString(text)
+public fun TextView.setText(text: Text) {
+    this.text = this.context.getString(text)
 }

@@ -9,6 +9,7 @@ plugins {
 }
 
 android {
+    namespace = "com.adkhambek.pack.text"
     kotlinOptions {
         freeCompilerArgs = (freeCompilerArgs + listOf("-Xexplicit-api=warning")).distinct()
     }
@@ -16,5 +17,6 @@ android {
 
 dependencies {
     implementation(libs.annotation)
+    implementation(libs.fragmentKtx)
     api(projects.libraries.text.core)
 }

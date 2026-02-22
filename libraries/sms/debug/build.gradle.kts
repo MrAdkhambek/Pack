@@ -8,6 +8,7 @@ plugins {
 }
 
 android {
+    namespace = "com.adkhambek.sms.debug"
     kotlinOptions {
         freeCompilerArgs = (freeCompilerArgs + listOf("-Xexplicit-api=warning")).distinct()
     }

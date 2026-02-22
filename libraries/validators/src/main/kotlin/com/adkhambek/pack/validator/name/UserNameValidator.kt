@@ -11,7 +11,7 @@ public class UserNameValidator(
 
     private companion object {
         // Minimum three characters:
-        private val USERNAME_PATTERN: Pattern = Pattern.compile("^[a-zA-Z\\d]{3,}\$")
+        private val USERNAME_PATTERN: Pattern = Pattern.compile("^[a-zA-Z\\d]{3,}$")
     }
 
     override operator fun invoke(value: String?): Set<Validator.Key> {

@@ -1,5 +1,6 @@
 package com.adkhambek.pack.text
 
+import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 
 /**
@@ -30,9 +31,21 @@ public sealed interface Text {
      *  val text: Text = Text(R.string.hi, "Adam")
      * ```
      */
-    public data class ResText @JvmOverloads constructor(
-        @StringRes val resId: Int,
-        val formatArgs: List<Any>? = null
+    public data class ResText(
+        @param:StringRes val resId: Int,
+        val formatArgs: List<Any> = emptyList()
+    ) : Text
+
+    /**
+     * ```kotlin
+     *  val text: Text = Text.PluralText(R.plurals.items, quantity = 5)
+     *  val text: Text = Text.PluralText(R.plurals.items, quantity = 5, listOf("5"))
+     * ```
+     */
+    public data class PluralText(
+        @param:PluralsRes val resId: Int,
+        val quantity: Int,
+        val formatArgs: List<Any> = emptyList()
     ) : Text
 
     public companion object {
@@ -44,8 +57,15 @@ public sealed interface Text {
 
         @JvmStatic
         public operator fun invoke(
-            resId: Int,
+            @StringRes resId: Int,
             vararg formatArgs: Any,
         ): Text = ResText(resId, formatArgs.asList())
+
+        @JvmStatic
+        public operator fun invoke(
+            @PluralsRes resId: Int,
+            quantity: Int,
+            vararg formatArgs: Any,
+        ): Text = PluralText(resId, quantity, formatArgs.asList())
     }
 }

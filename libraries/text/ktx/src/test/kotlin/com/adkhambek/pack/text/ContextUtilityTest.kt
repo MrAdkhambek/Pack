@@ -30,4 +30,32 @@ internal class ContextUtilityTest {
 
         Assertions.assertEquals(context.getString(text), context.getString(R.string.autofill))
     }
+
+    @Test
+    fun `test plural text with quantity one`() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val resId = com.adkhambek.pack.text.test.R.plurals.items
+        val text = Text.PluralText(resId, quantity = 1, formatArgs = listOf(1))
+
+        Assertions.assertEquals("1 item", context.getString(text))
+    }
+
+    @Test
+    fun `test plural text with quantity other`() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val resId = com.adkhambek.pack.text.test.R.plurals.items
+        val text = Text.PluralText(resId, quantity = 5, formatArgs = listOf(5))
+
+        Assertions.assertEquals("5 items", context.getString(text))
+    }
+
+    @Test
+    fun `test plural text without formatArgs`() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val resId = com.adkhambek.pack.text.test.R.plurals.items
+        val text = Text.PluralText(resId, quantity = 1)
+        val expected = context.resources.getQuantityString(resId, 1)
+
+        Assertions.assertEquals(expected, context.getString(text))
+    }
 }

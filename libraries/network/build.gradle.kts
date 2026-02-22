@@ -1,5 +1,4 @@
 @file:Suppress(
-    "DSL_SCOPE_VIOLATION",
     "UnstableApiUsage"
 )
 
@@ -9,6 +8,10 @@ plugins {
 }
 
 android {
+    namespace = "com.adkhambek.pack.network"
+    defaultConfig {
+        minSdk = 23
+    }
     kotlinOptions {
         freeCompilerArgs = (freeCompilerArgs + listOf("-Xexplicit-api=warning")).distinct()
     }
@@ -16,7 +19,8 @@ android {
 
 dependencies {
     implementation(libs.annotation)
-    compileOnly(libs.livedata.core)
+    compileOnly(libs.coreKtx)
     compileOnly(libs.kotlin.coroutines.core)
+    testImplementation(libs.coreKtx)
     testImplementation(libs.kotlin.coroutines.test)
 }
