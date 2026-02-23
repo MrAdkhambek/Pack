@@ -1,8 +1,3 @@
-@file:Suppress(
-    "DSL_SCOPE_VIOLATION",
-    "UnstableApiUsage"
-)
-
 plugins {
     id("com.adkhambek.android.library")
     id("com.adkhambek.publish")
@@ -10,13 +5,16 @@ plugins {
 
 android {
     namespace = "com.adkhambek.pack.text"
-    kotlinOptions {
-        freeCompilerArgs = (freeCompilerArgs + listOf("-Xexplicit-api=warning")).distinct()
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xexplicit-api=warning")
     }
 }
 
 dependencies {
     implementation(libs.annotation)
-    implementation(libs.fragmentKtx)
+    compileOnly(libs.fragmentKtx)
     api(projects.libraries.text.core)
 }

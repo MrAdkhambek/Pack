@@ -1,16 +1,14 @@
-@file:Suppress(
-    "DSL_SCOPE_VIOLATION",
-    "UnstableApiUsage"
-)
-
 plugins {
     id("com.adkhambek.android.library")
 }
 
 android {
     namespace = "com.adkhambek.sms.debug"
-    kotlinOptions {
-        freeCompilerArgs = (freeCompilerArgs + listOf("-Xexplicit-api=warning")).distinct()
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xexplicit-api=warning")
     }
 }
 

@@ -10,8 +10,11 @@ java {
 }
 
 dependencies {
-    implementation(libs.publish.gradlePlugin)
+    implementation(libs.publish.gradlePlugin) {
+        exclude(group = "org.jetbrains.dokka")
+    }
 }
+
 
 gradlePlugin {
     plugins {

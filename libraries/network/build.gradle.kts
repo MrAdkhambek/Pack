@@ -1,7 +1,3 @@
-@file:Suppress(
-    "UnstableApiUsage"
-)
-
 plugins {
     id("com.adkhambek.android.library")
     id("com.adkhambek.publish")
@@ -12,8 +8,11 @@ android {
     defaultConfig {
         minSdk = 23
     }
-    kotlinOptions {
-        freeCompilerArgs = (freeCompilerArgs + listOf("-Xexplicit-api=warning")).distinct()
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xexplicit-api=warning")
     }
 }
 
