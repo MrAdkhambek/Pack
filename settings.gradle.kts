@@ -31,7 +31,6 @@ include(
 
     ":libraries:network",
 
-    ":libraries:sms:core",
-    ":libraries:sms:debug"
+    ":libraries:sms:core"
 )
 
