@@ -10,13 +10,29 @@ androidDesugarJdkLibs = "2.1.5"
 detektPlugin = "1.23.8"
 ktlintPlugin = "14.0.1"
 
-kotlinpoet = "2.2.0"
 kotlinVersion = "2.3.10"
 kotlin-ksp = "2.3.5"
 kotlinCoroutinesVersion = "1.10.2"
 
 dokkaVersion = "2.1.0"
 maven-publish = "0.36.0"
+
+# AndroidX
+annotation = "1.9.1"
+coreKtx = "1.17.0"
+activityKtx = "1.12.4"
+fragmentKtx = "1.8.9"
+livedata-core = "2.10.0"
+
+# Google
+gms-play-auth = "18.3.0"
+
+# Test
+androidx-test-ext = "1.2.1"
+androidx-test-arch = "2.2.0"
+androidx-test-core = "1.6.1"
+androidx-test-runner = "1.6.2"
+mockk = "1.13.16"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -47,46 +63,33 @@ kotlin-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coro
 
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 
-multidex = "androidx.multidex:multidex:2.0.1"
-annotation = "androidx.annotation:annotation:1.9.1"
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
 
-coreKtx = "androidx.core:core-ktx:1.17.0"
-activityKtx = "androidx.activity:activity-ktx:1.12.4"
-fragmentKtx = "androidx.fragment:fragment-ktx:1.8.9"
+coreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+activityKtx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
+fragmentKtx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 
-fragment-testing = "androidx.fragment:fragment-testing:1.8.9"
-cicerone = { group = "com.github.terrakok", name = "cicerone", version = "7.1" }
-
-livedata-core = "androidx.lifecycle:lifecycle-livedata-core:2.10.0"
+livedata-core = { group = "androidx.lifecycle", name = "lifecycle-livedata-core", version.ref = "livedata-core" }
 
 # Kotlin
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinVersion" }
 
-# Utils
-jakewharton-timber = "com.jakewharton.timber:timber:5.0.1"
-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.14"
-
-auto-service = { group = "com.google.auto.service", name = "auto-service", version = "1.1.1" }
-ksp-api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "kotlin-ksp" }
-
-kotlinpoet-core = { group = "com.squareup", name = "kotlinpoet", version.ref = "kotlinpoet" }
-kotlinpoet-ksp = { group = "com.squareup", name = "kotlinpoet-ksp", version.ref = "kotlinpoet" }
 dokka-java = { group = "org.jetbrains.dokka", name = "kotlin-as-java-plugin", version.ref = "dokkaVersion" }
 
 # Google GSM
-gms-play-auth = "com.google.android.gms:play-services-auth-api-phone:18.3.0"
+gms-play-auth = { group = "com.google.android.gms", name = "play-services-auth-api-phone", version.ref = "gms-play-auth" }
 
 
 # Test
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
 
-androidx-test-ext = { group = "androidx.test.ext", name = "junit", version = "1.2.1" }
-androidx-test-arch = { group = "androidx.arch.core", name = "core-testing", version = "2.2.0" }
-androidx-test-core = { group = "androidx.test", name = "core-ktx", version = "1.6.1" }
-androidx-test-runner = { group = "androidx.test", name = "runner", version = "1.6.2" }
+androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext" }
+androidx-test-arch = { group = "androidx.arch.core", name = "core-testing", version.ref = "androidx-test-arch" }
+androidx-test-core = { group = "androidx.test", name = "core-ktx", version.ref = "androidx-test-core" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test-runner" }
 
-mockk = { group = "io.mockk", name = "mockk", version = "1.13.16" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 
 jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit5" }
 jupiter = { group = "org.junit.jupiter", name = "junit-jupiter" }
