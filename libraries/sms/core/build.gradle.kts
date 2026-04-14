@@ -20,4 +20,5 @@ dependencies {
     compileOnly(libs.gms.play.auth)
 
     testImplementation(libs.kotlin.coroutines.test)
+    testImplementation(libs.gms.play.auth)
 }
