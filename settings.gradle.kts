@@ -15,8 +15,10 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        mavenLocal()
         mavenCentral()
+        if (providers.gradleProperty("useMavenLocal").isPresent) {
+            mavenLocal()
+        }
     }
 }
 
