@@ -15,7 +15,6 @@ kotlin {
 
 dependencies {
     implementation(libs.annotation)
-    compileOnly(libs.livedata.core)
     compileOnly(libs.kotlin.coroutines.core)
     compileOnly(libs.gms.play.auth)
 
