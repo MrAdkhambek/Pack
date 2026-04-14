@@ -35,7 +35,7 @@ internal fun smsFlow(
                     trySend(message)
                 }
 
-                else -> close(RuntimeException(CommonStatusCodes.getStatusCodeString(status.statusCode)))
+                else -> close(SmsRetrievalException.fromStatusCode(status.statusCode))
             }
         }
     }
